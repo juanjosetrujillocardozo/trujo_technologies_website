@@ -1,10 +1,5 @@
 
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Términos y Condiciones - TRUJO TECHNOLOGIES',
-  description: 'Términos y condiciones de uso de los servicios de TRUJO TECHNOLOGIES. Lea nuestras políticas y condiciones.',
-}
+'use client'
 
 export default function TermsPage() {
   return (
@@ -16,7 +11,7 @@ export default function TermsPage() {
               Términos y Condiciones
             </h1>
             <p className="text-lg text-gray-600">
-              Última actualización: Septiembre 2024
+              Última actualización: 15 de septiembre de 2024
             </p>
           </div>
 

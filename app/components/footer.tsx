@@ -10,11 +10,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg">
+              <div className="bg-gradient-to-r from-red-500 to-blue-500 p-2 rounded-lg">
                 <Code2 className="h-6 w-6 text-white" />
               </div>
               <div>
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent">
                   TRUJO
                 </span>
                 <span className="text-xl font-light text-gray-300 ml-1">
@@ -70,7 +70,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2024 TRUJO TECHNOLOGIES. Todos los derechos reservados.
+              © 2023-2024 TRUJO TECHNOLOGIES. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6">
               <Link href="/privacidad" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">

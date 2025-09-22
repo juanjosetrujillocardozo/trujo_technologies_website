@@ -1,10 +1,5 @@
 
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Política de Privacidad - TRUJO TECHNOLOGIES',
-  description: 'Política de privacidad y protección de datos de TRUJO TECHNOLOGIES. Conoce cómo protegemos tu información personal.',
-}
+'use client'
 
 export default function PrivacyPage() {
   return (
@@ -16,7 +11,7 @@ export default function PrivacyPage() {
               Política de Privacidad
             </h1>
             <p className="text-lg text-gray-600">
-              Última actualización: Septiembre 2024
+              Última actualización: 15 de septiembre de 2024
             </p>
           </div>
 

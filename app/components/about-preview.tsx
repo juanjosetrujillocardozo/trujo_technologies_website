@@ -70,7 +70,7 @@ const AboutPreview = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Sobre 
-                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> TRUJO TECHNOLOGIES</span>
+                <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent"> TRUJO TECHNOLOGIES</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Nacimos en 2023 en Bogotá para ayudar a pequeñas y medianas empresas a dar el salto digital 
@@ -123,7 +123,7 @@ const AboutPreview = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Link href="/sobre-nosotros">
-                <Button size="lg" variant="outline" className="border-blue-300 hover:border-blue-500 hover:bg-blue-50 text-blue-700 group">
+                <Button size="lg" variant="outline" className="border-red-300 hover:border-red-500 hover:bg-red-50 text-red-700 group">
                   Conoce Más Sobre Nosotros
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -141,11 +141,16 @@ const AboutPreview = () => {
             {/* Founder Card */}
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
               <div className="text-center mb-6">
-                <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">JT</span>
+                <div className="relative w-24 h-24 mx-auto mb-4">
+                  <Image
+                    src="/juan-jose-foto.jpg"
+                    alt="Juan José Trujillo Cardozo"
+                    fill
+                    className="object-cover rounded-full"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">Juan José Trujillo Cardozo</h3>
-                <p className="text-blue-600 font-medium">Fundador y Desarrollador Full-Stack</p>
+                <p className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent font-medium">Fundador y Desarrollador Full-Stack</p>
               </div>
               
               <p className="text-gray-600 text-center mb-6 leading-relaxed">

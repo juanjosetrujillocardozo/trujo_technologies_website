@@ -4,7 +4,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Menu, X, Code2 } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
 const Header = () => {
@@ -23,6 +24,7 @@ const Header = () => {
     { href: '/', label: 'Inicio' },
     { href: '/servicios', label: 'Servicios' },
     { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
+    { href: '/proyectos', label: 'Proyectos' },
     { href: '/contacto', label: 'Contacto' },
   ]
 
@@ -38,16 +40,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg group-hover:shadow-lg transition-shadow">
-              <Code2 className="h-6 w-6 text-white" />
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                TRUJO
-              </span>
-              <span className="text-xl font-light text-gray-700 ml-1">
-                TECHNOLOGIES
-              </span>
+            <div className="relative w-12 h-12">
+              <Image
+                src="/logo-trujo-blanco.jpg"
+                alt="TRUJO TECHNOLOGIES Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 
@@ -74,7 +74,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="/contacto">
-              <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-200">
+              <Button className="bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-200">
                 Cotiza tu Proyecto
               </Button>
             </Link>
@@ -112,7 +112,7 @@ const Header = () => {
               ))}
               <div className="px-3 py-2">
                 <Link href="/contacto">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">
+                  <Button className="w-full bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white">
                     Cotiza tu Proyecto
                   </Button>
                 </Link>

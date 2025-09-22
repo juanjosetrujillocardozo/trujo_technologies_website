@@ -48,7 +48,7 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-4xl md:text-6xl font-bold leading-tight"
               >
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
                   Soluciones Web
                 </span>
                 <br />
@@ -78,7 +78,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
             >
               <Link href="/contacto">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                <Button size="lg" className="bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 group">
                   Cotiza tu Proyecto
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -122,7 +122,7 @@ const Hero = () => {
             className="relative lg:ml-8"
           >
             <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
-              <div className="aspect-[4/3] bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden">
+              <div className="aspect-[4/3] bg-gradient-to-br from-red-500 via-purple-500 to-blue-500 relative overflow-hidden">
                 {/* Code-like pattern overlay */}
                 <div className="absolute inset-0 opacity-20">
                   <div className="absolute top-4 left-4 text-white font-mono text-xs">

@@ -45,7 +45,7 @@ const ContactCTA = () => {
   ]
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 relative overflow-hidden">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-red-500 via-purple-600 to-blue-600 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
@@ -95,15 +95,15 @@ const ContactCTA = () => {
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link href="/contacto">
-                  <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <Button size="lg" className="bg-white text-red-600 hover:bg-red-50 shadow-lg hover:shadow-xl transition-all duration-300 group">
                     Comenzar Proyecto
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
                 
-                <Link href="/servicios">
+                <Link href="/proyectos">
                   <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                    Ver Servicios
+                    Ver Proyectos
                   </Button>
                 </Link>
               </div>

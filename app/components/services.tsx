@@ -28,9 +28,9 @@ const Services = () => {
       title: 'Desarrollo Web a la Medida',
       description: 'Aplicaciones ligeras para procesos internos, integraciones con APIs y paneles de control personalizados.',
       features: ['HTML, CSS, JavaScript', 'React & Next.js', 'APIs REST', 'Responsive Design'],
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-200'
+      color: 'from-red-500 to-red-600',
+      bgColor: 'bg-red-50',
+      borderColor: 'border-red-200'
     },
     {
       icon: FileType2,
@@ -46,9 +46,9 @@ const Services = () => {
       title: 'Nube (AWS / Azure)',
       description: 'Arquitectura básica, despliegues, bases de datos gestionadas, copias de seguridad y monitoreo.',
       features: ['Arquitectura cloud', 'Despliegues automáticos', 'Backup automático', 'Monitoreo 24/7'],
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50',
-      borderColor: 'border-purple-200'
+      color: 'from-blue-500 to-blue-600',
+      bgColor: 'bg-blue-50',
+      borderColor: 'border-blue-200'
     },
     {
       icon: Monitor,
@@ -100,7 +100,7 @@ const Services = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Nuestros 
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Servicios</span>
+            <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent"> Servicios</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ofrecemos soluciones completas desde el desarrollo hasta el soporte, 
@@ -198,9 +198,9 @@ const Services = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center"
         >
-          <Link href="/servicios">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group">
-              Ver Todos los Servicios
+          <Link href="/proyectos">
+            <Button size="lg" className="bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 group">
+              Ver Nuestros Proyectos
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
