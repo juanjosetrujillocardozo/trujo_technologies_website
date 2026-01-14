@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { name, email, phone, company, message, formType = 'contact' } = body
 
-    // 1. Validaciones básicas
+    // 1. Validaciones
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Nombre, email y mensaje son campos obligatorios' },
@@ -13,20 +13,20 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const submissionData = {
-      name: name.trim(),
+    // 2. Mapeo de datos para n8n (según lo que espera tu workflow)
+    const n8nPayload = {
+      nombre: name.trim(),
       email: email.trim().toLowerCase(),
-      phone: phone?.trim() || null,
-      company: company?.trim() || null,
-      message: message.trim(),
+      telefono: phone?.trim() || 'No proporcionado',
+      empresa: company?.trim() || 'No proporcionada',
+      mensaje: message.trim(),
       formType,
       timestamp: new Date().toISOString()
     }
 
-    console.log('Enviando a n8n:', submissionData)
+    console.log('🚀 Enviando lead a n8n:', n8nPayload)
 
-    // 2. Llamada al Webhook de n8n
-    // Usamos la URL que me pasaste directamente
+    // 3. Llamada al Webhook de n8n
     const n8nWebhookUrl = "https://n8n.trujotechnologies.com/webhook/contacto-web"
     
     const n8nResponse = await fetch(n8nWebhookUrl, {
@@ -34,10 +34,12 @@ export async function POST(request: NextRequest) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(submissionData),
+      body: JSON.stringify(n8nPayload),
     })
 
     if (!n8nResponse.ok) {
+      const errorText = await n8nResponse.text()
+      console.error('❌ Error en n8n:', n8nResponse.status, errorText)
       throw new Error(`n8n responded with ${n8nResponse.status}`)
     }
 
@@ -51,9 +53,9 @@ export async function POST(request: NextRequest) {
     )
 
   } catch (error) {
-    console.error('Error en el envío del formulario:', error)
+    console.error('❌ Error procesando contacto:', error)
     return NextResponse.json(
-      { error: 'Error al procesar el mensaje. Por favor, inténtalo más tarde.' },
+      { error: 'Error al enviar el mensaje. Por favor, inténtalo más tarde.' },
       { status: 500 }
     )
   }
