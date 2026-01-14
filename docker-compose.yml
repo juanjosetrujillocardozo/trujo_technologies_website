@@ -2,6 +2,7 @@ services:
   trujotech-site:
     build:
       context: ./site/app
+      dockerfile: Dockerfile
     container_name: trujotech-site
     restart: unless-stopped
     environment:
