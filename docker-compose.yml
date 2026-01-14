@@ -1,7 +1,7 @@
 services:
   trujotech-site:
     build:
-      context: ../web/trujotech-site
+      context: ./site/app
     container_name: trujotech-site
     restart: unless-stopped
     environment:
