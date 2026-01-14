@@ -1,0 +1,42 @@
+name: Deploy trujotech-site to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Add VPS to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 49152 -H 5.252.225.176 >> ~/.ssh/known_hosts
+
+      - name: Deploy to VPS
+        run: |
+          ssh -p 49152 juan@5.252.225.176 << 'EOF'
+            set -e
+
+            cd /home/juan/repos/trujo_technologies_website
+            git checkout main
+            git pull --ff-only origin main
+
+            rsync -av --delete site/ /home/juan/stack/site/
+            rsync -av --delete services/ /home/juan/stack/services/
+            rsync -av docker-compose.yml /home/juan/stack/docker-compose.yml
+
+            cd /home/juan/stack
+            docker compose build trujotech-site
+            docker compose up -d trujotech-site
+          EOF
