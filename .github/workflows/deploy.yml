@@ -28,14 +28,16 @@ jobs:
           ssh -p 49152 juan@5.252.225.176 << 'EOF'
             set -e
 
+            # 1. Actualizar código en el repo
             cd /home/juan/repos/trujo_technologies_website
             git checkout main
             git pull --ff-only origin main
 
-            rsync -av --delete site/ /home/juan/stack/site/
-            rsync -av --delete services/ /home/juan/stack/services/
+            # 2. Sincronizar SOLO lo que existe hacia stack
+            rsync -av --delete app/ /home/juan/stack/site/app/
             rsync -av docker-compose.yml /home/juan/stack/docker-compose.yml
 
+            # 3. Rebuild y deploy
             cd /home/juan/stack
             docker compose build trujotech-site
             docker compose up -d trujotech-site
